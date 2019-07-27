@@ -1,0 +1,517 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>白内障复明手术救助项目管理系统</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport' />
+
+
+
+        <style>
+        .header1 {
+            height: 75px;
+            margin: 0px auto;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+            z-index: 2;
+            background-color: #ffffff;
+            border-bottom-style: inset;
+            border-bottom-color: #CCCCCC;
+            border-bottom-width: 1px;
+        }
+
+        .header2 {
+            height: 73px;
+            margin: 15px auto;
+            overflow: hidden;
+            position: relative;
+            width: 980px;
+            z-index: 2;
+        }
+
+        .headerNav {
+            right: 0;
+            text-align: right;
+            top: 35px;
+            width: 300px;
+            position: absolute;
+        }
+
+            .headerNav a {
+                color: #999;
+                font-size: 12px;
+                padding: 0 2px;
+            }
+
+                .headerNav a:hover {
+                    text-decoration: underline;
+                    color: #658b98;
+                }
+                
+                
+    </style>
+        <style>
+        
+        
+        .butNav6 { left: 750px;text-align: left;top: 60px; width: 100px; height:40px;position:absolute;}
+        
+        .butNav5 { left: 290px;text-align: right;top: 60px; width: 80px; height:40px;position:absolute;}
+        .butNav7 { left: 110px;text-align: right;top: 60px; width: 200px; height:40px;position:absolute;}
+        .butNav8 { left: 410px;text-align: right;top: 70px; width: 80px; height:40px;position:absolute;}
+        .butNav9 { left: 500px;text-align: right;top: 60px; width: 200px; height:40px;position:absolute;}
+        
+    </style>
+        <!--[if lt IE 9]>
+    <script src='assets/javascripts/html5shiv.js' type='text/javascript'></script>
+    <![endif]-->
+    <link href='assets/stylesheets/bootstrap/bootstrap.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/bootstrap/bootstrap-responsive.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jquery ui -->
+    <link href='assets/stylesheets/jquery_ui/jquery-ui-1.10.0.custom.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/jquery_ui/jquery.ui.1.10.0.ie.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / switch buttons -->
+    <link href='assets/stylesheets/plugins/bootstrap_switch/bootstrap-switch.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / xeditable -->
+    <link href='assets/stylesheets/plugins/xeditable/bootstrap-editable.css' media='all' rel='stylesheet' type='text/css' />
+    <link href='assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / wysihtml5 (wysywig) -->
+    <link href='assets/stylesheets/plugins/common/bootstrap-wysihtml5.css' media='all' rel='stylesheet' type='text/css' />
+
+    <!-- / full calendar -->
+    <link href='assets/stylesheets/plugins/fullcalendar/fullcalendar.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / select2 -->
+    <link href='assets/stylesheets/plugins/select2/select2.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / mention -->
+    <link href='assets/stylesheets/plugins/mention/mention.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / tabdrop (responsive tabs) -->
+    <link href='assets/stylesheets/plugins/tabdrop/tabdrop.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / jgrowl notifications -->
+    <link href='assets/stylesheets/plugins/jgrowl/jquery.jgrowl.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datatables -->
+    <link href='assets/stylesheets/plugins/datatables/bootstrap-datatable.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / dynatrees (file trees) -->
+    <link href='assets/stylesheets/plugins/dynatree/ui.dynatree.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / color picker -->
+    <link href='assets/stylesheets/plugins/bootstrap_colorpicker/bootstrap-colorpicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / datetime picker -->
+    <link href='assets/stylesheets/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.min.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / daterange picker) -->
+    <link href='assets/stylesheets/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flags (country flags) -->
+    <link href='assets/stylesheets/plugins/flags/flags.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / slider nav (address book) -->
+    <link href='assets/stylesheets/plugins/slider_nav/slidernav.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / fuelux (wizard) -->
+    <link href='assets/stylesheets/plugins/fuelux/wizard.css' media='all' rel='stylesheet' type='text/css' />
+    <!-- / flatty theme -->
+    <link href='assets/stylesheets/light-theme.css'  media='all' rel='stylesheet' type='text/css' />
+    <!-- / demo -->
+    <link href='assets/stylesheets/demo.css' media='all' rel='stylesheet' type='text/css' />
+    
+      <asp:ContentPlaceHolder id="head" runat="server">
+            
+    </asp:ContentPlaceHolder>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
+<body class='contrast-blue'>
+<header>
+    <div class='navbar'>
+        <div class='navbar-inner'>
+            <div class='container-fluid'>
+                <a class='brand' href='index.aspx'>
+                    <i class='icon-heart-empty'></i>
+                    <span class='hidden-phone'>白内障复明手术救助项目管理系统</span>
+                </a>
+                <a class='toggle-nav btn pull-left' href='#'>
+                    <i class='icon-reorder'></i>
+                </a>
+                <ul class='nav pull-right'>
+
+                    <li class='dropdown medium only-icon widget'>
+                        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                            <i class='icon-rss'></i>
+                            <div class='label'><%=Session("count") %></div>
+                        </a>
+                        <ul class='dropdown-menu'>
+                            
+                            <li>
+                                <a href='#'>
+                                    <div class='widget-body'>
+                                        <div class='pull-left icon'>
+                                            <i class='icon-comment text-warning'></i>
+                                        </div>
+                                        <div class='pull-left text'>
+                                            当前需要处理信息有<%=Session("count") %>条.
+                                            <small class='muted'>刚刚</small>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            
+                            <li class='divider'></li>
+                            
+                            <li class='widget-footer'>
+                                <a href='Frm_XXXG.aspx'>所有信息</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class='dropdown dark user-menu'>
+                        <a class='dropdown-toggle' data-toggle='dropdown' href='#'>
+                            <img alt='Mila Kunis' height='23' src='assets/images/avatar.jpg' width='23' />
+                            <span class='user-name hidden-phone'> 当前用户：<%=Session("username") %></span>
+                            <b class='caret'></b>
+                        </a>
+                        <ul class='dropdown-menu'>
+                            <li>
+                                <a href='#'>
+                                    <i class='icon-user'></i>
+                                    设置
+                                </a>
+                            </li>
+                            <li>
+                                <a onclick="javascript:ModPassword();return false;" href="#" style="cursor: pointer;font-size :13px;">
+                                    <i class='icon-cog'></i>
+                                    修改密码
+
+                                </a>
+                            </li>
+                            <li class='divider'></li>
+                            <li>
+                                <a href='Login.aspx'>
+                                    <i class='icon-signout'></i>
+                                    退出
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</header>
+<div id='wrapper'>
+<div id='main-nav-bg'></div>
+<nav class='' id='main-nav'>
+<div class='navigation'>
+
+<ul class='nav nav-stacked'>
+<li <%If Session("onelevel") = "0"Then%> class='active' <% Else %> class='' <% End if %> >
+    <a href='Index.aspx'>
+        <i class='icon-dashboard'></i>
+        <span>主页</span>
+    </a>
+</li>
+<li <%If Session("onelevel") = "1"%> class='active' <% Else %> class='' <% End if %> >
+    <a class='dropdown-collapse' href='#'>
+        <i class='icon-edit'></i>
+        <span>信息管理</span>
+        <i class='icon-angle-down angle-down'></i>
+    </a>
+    <ul <%If Session("onelevel") = "1"%> class='in nav nav-stacked' <% Else %> class='nav nav-stacked' <% End if %> >
+   
+<%--        <li <%If Session("twolevel") = "1.1"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Frm_XXLR.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>信息录入</span>
+            </a>
+        </li>--%>
+            <%If Session("bLR") = True Then %>
+        <li <%If Session("twolevel") = "1.2"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Frm_XXXG.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>信息录入</span>
+            </a>
+        </li>
+         <%End if %>
+        <li <%If Session("twolevel") = "1.3"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Frm_XXCX.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>信息查询</span>
+            </a>
+        </li>
+        <li <%If Session("twolevel") = "1.4"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Key_Print.aspx'  target="_blank">
+                <i class='icon-caret-right'></i>
+                <span>打印汇总表</span>
+            </a>
+        </li>
+    </ul>
+</li>
+    <%If Session("bSH") = True Then %>
+<li <%If Session("onelevel") = "2" Then%> class='active' <% Else %> class='' <% End if %> >
+    <a class='dropdown-collapse ' href='#'>
+        <i class='icon-check'></i>
+        <span>信息审核</span>
+        <i class='icon-angle-down angle-down'></i>
+    </a>
+    <ul <%If Session("onelevel") = "2"%> class='in nav nav-stacked' <% Else %> class='nav nav-stacked' <% End if %> >
+        <li <%If Session("twolevel") = "2.1"%> class='active' <% Else %> class='' <% End If %> >
+            <a href='Key_SH.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>审核</span>
+            </a>
+        </li>
+        
+    </ul>
+</li>
+    <%End if %>
+<li <%If Session("onelevel") = "3"Then%> class='active' <% Else %> class='' <% End if %> >
+    <a href='Key_TJ.aspx'>
+        <i class='icon-bar-chart'></i>
+        <span>统计分析</span>
+    </a>
+</li>
+
+
+<%If Session("userid") = "system"%>
+
+<li <%If Session("onelevel") = "4"Then%> class='active' <% Else %> class='' <% End if %> >
+    <a class='dropdown-collapse ' href='#'>
+        <i class='icon-book'></i>
+        <span>基础数据</span>
+        <i class='icon-angle-down angle-down'></i>
+    </a>
+    <ul <%If Session("onelevel") = "4"%> class='in nav nav-stacked' <% Else %> class='nav nav-stacked' <% End if %> >
+        <li <%If Session("twolevel") = "4.1"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Key_HKLXZD.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>户口类型字典</span>
+            </a>
+        </li>
+        <li <%If Session("twolevel") = "4.2"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Key_BYZD.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>病因字典</span>
+            </a>
+        </li>
+         <li <%If Session("twolevel") = "4.3"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Key_NDZD.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>年度字典</span>
+            </a>
+        </li>
+    </ul>
+</li>
+
+<li <%If Session("onelevel") = "5"%> class='active' <% Else %> class='' <% End if %> >
+    <a class='dropdown-collapse ' href='#'>
+        <i class='icon-cog'></i>
+        <span>系统管理</span>
+        <i class='icon-angle-down angle-down'></i>
+    </a>
+    <ul <%If Session("onelevel") = "5"%> class='in nav nav-stacked' <% Else %> class='nav nav-stacked' <% End if %> >
+        <li <%If Session("twolevel") = "5.1"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Key_GLJG.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>管理机构信息</span>
+            </a>
+        </li>
+        <li <%If Session("twolevel") = "5.2"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Key_DDJG.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>定点机构信息</span>
+            </a>
+        </li>
+        <li <%If Session("twolevel") = "5.3"%> class='active' <% Else %> class='' <% End if %> >
+            <a href='Key_YHGL.aspx'>
+                <i class='icon-caret-right'></i>
+                <span>用户管理</span>
+            </a>
+        </li>
+  <% End if %>      
+
+    </ul>
+</li>
+
+</ul>
+</div>
+</nav>
+<section id='content'>
+<div class='container-fluid'>
+<div class='row-fluid' id='content-wrapper'>
+<div class='span12'>
+<div class='page-header'>
+    <h1 class='pull-left'>
+        
+        <i class='icon-chevron-sign-right'></i>
+        <span><%=Session("menu")%></span>
+    </h1>
+            <div class='pull-right'>
+                <ul class='breadcrumb'>
+                    <li>
+                        <a href="index.aspx"><i class='icon-bar-chart'></i>
+                        </a>
+                    </li>
+                    
+                    <li class='separator'>
+                        <i class='icon-angle-right'></i>
+                    </li>
+                    <li class='active'><%=Session("menu")%></li>
+                </ul>
+            </div>
+</div>
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+
+
+</div>
+</div>
+</div>
+</section>
+</div>
+
+    <script src="js/jquery_1.8.3.js" type="text/javascript"></script>
+   
+    <script src="layer/layer.js" type="text/javascript"></script>
+<script type="text/javascript">
+        $(function () {
+            layer.config({
+                extend: ['layui/css/layui.css'], //加载新皮肤
+                skin: 'layer-ext-espresso' //一旦设定，所有弹层风格都采用此主题。
+            });
+        });
+
+        //弹出框
+        function ModPassword() {
+            layer.open({
+
+                title: ['修改密码'],
+                type: 2,
+                content: "SetPassword.aspx",
+                area: ['800px', '265px'],
+                shade: 0.3,
+                cancel: function (index, layero) {
+                    if (confirm('确定要关闭么?')) { //只有当点击confirm框的确定时，该层才会关闭
+                        //document.getElementById("ContentPlaceHolder1_Button2").click();
+
+                        layer.close(index);
+
+                    }
+                    return false;
+                }
+            });
+        }
+
+    </script>
+
+
+
+<!-- / jquery -->
+<script src='assets/javascripts/jquery/jquery.min.js' type='text/javascript'></script>
+<!-- / jquery mobile events (for touch and slide) -->
+<script src='assets/javascripts/plugins/mobile_events/jquery.mobile-events.min.js' type='text/javascript'></script>
+<!-- / jquery migrate (for compatibility with new jquery) -->
+<script src='assets/javascripts/jquery/jquery-migrate.min.js' type='text/javascript'></script>
+<!-- / jquery ui -->
+<script src='assets/javascripts/jquery_ui/jquery-ui.min.js' type='text/javascript'></script>
+<!-- / bootstrap -->
+<script src='assets/javascripts/bootstrap/bootstrap.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/excanvas.js' type='text/javascript'></script>
+
+<!-- / sparklines -->
+<%--<script src='assets/javascripts/plugins/sparklines/jquery.sparkline.min.js' type='text/javascript'></script>--%>
+
+<!-- / flot charts -->
+<script src='assets/javascripts/plugins/flot/flot.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/flot.resize.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/flot/flot.pie.js' type='text/javascript'></script>
+
+<!-- / bootstrap switch -->
+<%--<script src='assets/javascripts/plugins/bootstrap_switch/bootstrapSwitch.min.js' type='text/javascript'></script>--%>
+
+<!-- / fullcalendar -->
+<%--<script src='assets/javascripts/plugins/fullcalendar/fullcalendar.min.js' type='text/javascript'></script>--%>
+
+<!-- / datatables -->
+<script src='assets/javascripts/plugins/datatables/jquery.dataTables.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/datatables/jquery.dataTables.columnFilter.js' type='text/javascript'></script>
+
+<!-- / wysihtml5 -->
+<%--<script src='assets/javascripts/plugins/common/wysihtml5.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/common/bootstrap-wysihtml5.js' type='text/javascript'></script>--%>
+
+<!-- / select2 -->
+<%--<script src='assets/javascripts/plugins/select2/select2.js' type='text/javascript'></script>--%>
+
+<!-- / color picker -->
+<%--<script src='assets/javascripts/plugins/bootstrap_colorpicker/bootstrap-colorpicker.min.js' type='text/javascript'></script>--%>
+
+<%--<!-- / mention -->
+<script src='assets/javascripts/plugins/mention/mention.min.js' type='text/javascript'></script>
+<!-- / input mask -->
+<script src='assets/javascripts/plugins/input_mask/bootstrap-inputmask.min.js' type='text/javascript'></script>
+<!-- / fileinput -->
+<script src='assets/javascripts/plugins/fileinput/bootstrap-fileinput.js' type='text/javascript'></script>
+<!-- / modernizr -->
+<script src='assets/javascripts/plugins/modernizr/modernizr.min.js' type='text/javascript'></script>
+<!-- / retina -->
+<script src='assets/javascripts/plugins/retina/retina.js' type='text/javascript'></script>--%>
+
+<%--<!-- / timeago -->
+<script src='assets/javascripts/plugins/timeago/jquery.timeago.js' type='text/javascript'></script>
+<!-- / slimscroll -->
+<script src='assets/javascripts/plugins/slimscroll/jquery.slimscroll.min.js' type='text/javascript'></script>
+<!-- / autosize (for textareas) -->
+<script src='assets/javascripts/plugins/autosize/jquery.autosize-min.js' type='text/javascript'></script>
+<!-- / charCount -->
+<script src='assets/javascripts/plugins/charCount/charCount.js' type='text/javascript'></script>
+<!-- / validate -->
+<script src='assets/javascripts/plugins/validate/jquery.validate.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/validate/additional-methods.js' type='text/javascript'></script>
+<!-- / naked password -->
+<script src='assets/javascripts/plugins/naked_password/naked_password-0.2.4.min.js' type='text/javascript'></script>
+<!-- / nestable -->
+<script src='assets/javascripts/plugins/nestable/jquery.nestable.js' type='text/javascript'></script>
+<!-- / tabdrop -->
+<script src='assets/javascripts/plugins/tabdrop/bootstrap-tabdrop.js' type='text/javascript'></script>
+<!-- / jgrowl -->
+<script src='assets/javascripts/plugins/jgrowl/jquery.jgrowl.min.js' type='text/javascript'></script>
+<!-- / bootbox -->
+<script src='assets/javascripts/plugins/bootbox/bootbox.min.js' type='text/javascript'></script>
+<!-- / inplace editing -->
+<script src='assets/javascripts/plugins/xeditable/bootstrap-editable.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/xeditable/wysihtml5.js' type='text/javascript'></script>
+<!-- / ckeditor -->
+<script src='assets/javascripts/plugins/ckeditor/ckeditor.js' type='text/javascript'></script>
+<!-- / filetrees -->
+<script src='assets/javascripts/plugins/dynatree/jquery.dynatree.min.js' type='text/javascript'></script>
+<!-- / datetime picker -->
+<script src='assets/javascripts/plugins/bootstrap_datetimepicker/bootstrap-datetimepicker.js' type='text/javascript'></script>
+<!-- / daterange picker -->
+<script src='assets/javascripts/plugins/bootstrap_daterangepicker/moment.min.js' type='text/javascript'></script>
+<script src='assets/javascripts/plugins/bootstrap_daterangepicker/bootstrap-daterangepicker.js' type='text/javascript'></script>
+<!-- / max length -->
+<script src='assets/javascripts/plugins/bootstrap_maxlength/bootstrap-maxlength.min.js' type='text/javascript'></script>
+<!-- / dropdown hover -->
+<script src='assets/javascripts/plugins/bootstrap_hover_dropdown/twitter-bootstrap-hover-dropdown.min.js' type='text/javascript'></script>
+<!-- / slider nav (address book) -->
+<script src='assets/javascripts/plugins/slider_nav/slidernav-min.js' type='text/javascript'></script>
+<!-- / fuelux -->
+<script src='assets/javascripts/plugins/fuelux/wizard.js' type='text/javascript'></script>--%>
+
+
+
+<!-- / flatty theme -->
+<script src='assets/javascripts/nav.js' type='text/javascript'></script>
+<script src='assets/javascripts/tables.js' type='text/javascript'></script>
+<%--<script src='assets/javascripts/theme.js' type='text/javascript'></script>--%>
+
+<!-- / demo -->
+<%--<script src='assets/javascripts/demo/jquery.mockjax.js' type='text/javascript'></script>--%>
+<%--<script src='assets/javascripts/demo/inplace_editing.js' type='text/javascript'></script>--%>
+<%--<script src='assets/javascripts/demo/charts.js' type='text/javascript'></script>--%>
+<%--<script src='assets/javascripts/demo/demo.js' type='text/javascript'></script>--%>
+
+<div style="display:none"></div>
+</body>
+</html>
+
